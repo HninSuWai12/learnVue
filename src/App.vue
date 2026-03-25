@@ -3,6 +3,14 @@ import { ref } from 'vue';
 
 const emoji = ref ('hello') ;
 const name = ref("Rachel") ;
+const year = ref("2026") ;
+const quote = ref("First , solve the problem.Then , write the code") ;
+const author = ref("Hnin Su") ;
+const href = ref("https://vuejs.org") ;
+const isDisabled = ref(true);
+quote.value = "It is a feature , not a bug." 
+author.value = "Unknown" ;
+
 </script>
 
 <template>
@@ -10,36 +18,22 @@ const name = ref("Rachel") ;
     <span>{{ emoji }}</span>
   </header>
   <main>
-    <h1>Hello , {{ name }}</h1>
-    <p>I'm about to learn <a href="https://vuejs.org">Vue.js</a></p>
+    <!-- <h1>Hello , {{ name }}</h1>
+    <p>I'm about to learn <a href="https://vuejs.org">Vue.js</a></p> -->
+    <section>
+      <p>{{ quote }}</p>
+      <a target="_blank" v-bind:href="href"> <span>{{ author }}</span></a>
+    </section>
+    <section id="buttons">
+      <button v-bind:disabled="isBtnDisabled" >Another</button>
+      <button v-bind:disabled="isBtnDisabled" >Share</button>
+    </section>
   </main>
+  <footer>
+    <p>&copy; {{ year }}</p>
+  </footer>
 </template>
 
 <style scoped> 
-header {
-  line-height: 1.5;
-}
 
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
-
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-}
 </style>
