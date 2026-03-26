@@ -11,6 +11,12 @@ const isDisabled = ref(true);
 quote.value = "It is a feature , not a bug." 
 author.value = "Unknown" ;
 
+const count = ref(0) ;
+const nameVale = ref('') ;
+const handleOnclick = (e) => {
+  alert(nameVale.value) ;
+}
+
 </script>
 
 <template>
@@ -20,13 +26,18 @@ author.value = "Unknown" ;
   <main>
     <!-- <h1>Hello , {{ name }}</h1>
     <p>I'm about to learn <a href="https://vuejs.org">Vue.js</a></p> -->
+    <p>{{ count }}</p>
     <section>
       <p>{{ quote }}</p>
       <a target="_blank" v-bind:href="href"> <span>{{ author }}</span></a>
+      <input type="text" @input="(e) => nameVale = e.target.value" />
     </section>
     <section id="buttons">
       <button v-bind:disabled="isBtnDisabled" >Another</button>
       <button v-bind:disabled="isBtnDisabled" >Share</button>
+      <button @click="count++">Add +1</button>
+
+      <button @click="handleOnclick">OK name</button>
     </section>
   </main>
   <footer>
