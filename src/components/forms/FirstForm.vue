@@ -38,6 +38,7 @@ watchEffect(() => {
     console.error("Error>>", error);
   }
 });
+import MainLayout from '../Login/MainLayout.vue';
 
 </script>
 <template>
@@ -59,6 +60,7 @@ watchEffect(() => {
     </ul>
    </form>
 <input type="text" v-model="model" />
+<MainLayout/>
 </template>
 
 <style scoped>
